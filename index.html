@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV. Adritama Data Progresif - IT Solutions & Security Systems</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo img {
+            height: 50px;
+            width: auto;
+        }
+
+        .logo-text {
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #ffd700;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 150px 2rem 100px;
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            animation: fadeInUp 1.2s;
+        }
+
+        .cta-button {
+            background: #ffd700;
+            color: #1e3c72;
+            padding: 1rem 2.5rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(255, 215, 0, 0.3);
+        }
+
+        /* Section Styles */
+        section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #1e3c72;
+            text-align: center;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 3rem;
+            font-size: 1.1rem;
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .about-highlights {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 2rem;
+            border-radius: 10px;
+        }
+
+        .about-highlights h3 {
+            color: #1e3c72;
+            margin-bottom: 1rem;
+        }
+
+        .about-highlights ul {
+            list-style: none;
+        }
+
+        .about-highlights li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .about-highlights li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #2a5298;
+            font-weight: bold;
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            color: #1e3c72;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .service-card ul {
+            list-style: none;
+            color: #666;
+        }
+
+        .service-card li {
+            padding: 0.3rem 0;
+            padding-left: 1.2rem;
+            position: relative;
+        }
+
+        .service-card li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #2a5298;
+        }
+
+        /* Portfolio Section */
+        .portfolio {
+            background: #f8f9fa;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .portfolio-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .portfolio-item:hover {
+            transform: scale(1.03);
+        }
+
+        .portfolio-item img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .portfolio-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(30, 60, 114, 0.95), transparent);
+            color: white;
+            padding: 1.5rem;
+            transform: translateY(70%);
+            transition: transform 0.3s;
+        }
+
+        .portfolio-item:hover .portfolio-overlay {
+            transform: translateY(0);
+        }
+
+        .portfolio-overlay h3 {
+            color: white;
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+
+        .portfolio-overlay p {
+            font-size: 0.95rem;
+            opacity: 0.95;
+        }
+
+        /* Why Choose Us */
+        .why-choose {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 4rem 2rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .feature {
+            text-align: center;
+            padding: 2rem;
+            background: white;
+            border-radius: 10px;
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature h3 {
+            color: #1e3c72;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Contact Section */
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .contact-form {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #1e3c72;
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #2a5298;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .contact-info {
+            padding: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: start;
+            margin-bottom: 2rem;
+            gap: 1rem;
+        }
+
+        .contact-item-icon {
+            font-size: 1.5rem;
+            color: #2a5298;
+        }
+
+        .contact-item-text h3 {
+            color: #1e3c72;
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        /* Footer */
+        footer {
+            background: #1e3c72;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .about-content,
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-links {
+                gap: 1rem;
+                flex-wrap: wrap;
+                font-size: 0.9rem;
+            }
+
+            .logo img {
+                height: 40px;
+            }
+
+            .logo-text {
+                font-size: 1rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="ADP_LOGO.png" alt="CV. Adritama Data Progresif Logo">
+                <span class="logo-text">CV. Adritama Data Progresif</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Beranda</a></li>
+                <li><a href="#about">Tentang</a></li>
+                <li><a href="#services">Layanan</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Kontak</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <h1>Solusi IT & Sistem Keamanan Terpadu</h1>
+        <p>Partner terpercaya untuk kebutuhan teknologi informasi, jaringan, dan sistem keamanan bisnis Anda</p>
+        <a href="#contact" class="cta-button">Hubungi Kami</a>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>Tentang Kami</h2>
+        <p class="section-subtitle">Profesional dalam bidang teknologi dan sistem keamanan</p>
+        <div class="about-content">
+            <div class="about-text">
+                <p>CV. Adritama Data Progresif adalah perusahaan yang bergerak di bidang teknologi informasi, jaringan komputer, dan sistem keamanan terintegrasi. Dengan pengalaman dan tim profesional yang berpengalaman, kami berkomitmen memberikan solusi terbaik untuk kebutuhan bisnis Anda.</p>
+                <br>
+                <p>Kami menghadirkan layanan yang komprehensif mulai dari instalasi, konfigurasi, hingga maintenance sistem IT dan keamanan. Kepercayaan klien adalah prioritas utama kami dalam setiap proyek yang dikerjakan.</p>
+            </div>
+            <div class="about-highlights">
+                <h3>Keunggulan Kami</h3>
+                <ul>
+                    <li>Tim teknisi bersertifikat dan berpengalaman</li>
+                    <li>Layanan purna jual yang responsif</li>
+                    <li>Harga kompetitif dengan kualitas terjamin</li>
+                    <li>Garansi resmi untuk setiap produk</li>
+                    <li>Konsultasi gratis untuk kebutuhan proyek</li>
+                    <li>One-stop solution untuk semua kebutuhan IT</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <h2>Layanan Kami</h2>
+        <p class="section-subtitle">Solusi lengkap untuk kebutuhan teknologi bisnis Anda</p>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">🌐</div>
+                <h3>IT Network & Software</h3>
+                <ul>
+                    <li>Instalasi & konfigurasi jaringan</li>
+                    <li>Network security</li>
+                    <li>Server setup & maintenance</li>
+                    <li>Software development</li>
+                    <li>IT consulting</li>
+                    <li>Cloud solutions</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">📹</div>
+                <h3>Security System</h3>
+                <ul>
+                    <li>CCTV & IP Camera</li>
+                    <li>Access Control System</li>
+                    <li>Alarm Gedung</li>
+                    <li>Intercom System</li>
+                    <li>Video Management System</li>
+                    <li>Monitoring 24/7</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🔥</div>
+                <h3>Fire Protection System</h3>
+                <ul>
+                    <li>Fire Alarm System</li>
+                    <li>Fire Suppression System</li>
+                    <li>Smoke Detector</li>
+                    <li>Sprinkler System</li>
+                    <li>Fire Hydrant</li>
+                    <li>Emergency Response System</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">❄️</div>
+                <h3>MEP & AC System</h3>
+                <ul>
+                    <li>AC Installation & Service</li>
+                    <li>HVAC System</li>
+                    <li>Ventilasi & Exhaust</li>
+                    <li>Electrical System</li>
+                    <li>Plumbing System</li>
+                    <li>Building Automation</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">⚡</div>
+                <h3>Elektronika</h3>
+                <ul>
+                    <li>Instalasi Listrik</li>
+                    <li>Panel Listrik</li>
+                    <li>UPS & Genset</li>
+                    <li>Lighting System</li>
+                    <li>Power Supply</li>
+                    <li>Grounding System</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🔊</div>
+                <h3>Audio System</h3>
+                <ul>
+                    <li>Sound System</li>
+                    <li>Public Address System</li>
+                    <li>Background Music</li>
+                    <li>Conference System</li>
+                    <li>Home Theater</li>
+                    <li>Audio Visual Integration</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio">
+        <h2>Portfolio Proyek</h2>
+        <p class="section-subtitle">Beberapa proyek yang telah kami kerjakan dengan hasil memuaskan</p>
+        <div class="portfolio-grid">
+            <div class="portfolio-item">
+                <img src="project1.jpg" alt="Instalasi Panel Listrik & MCB">
+                <div class="portfolio-overlay">
+                    <h3>Instalasi Panel Listrik</h3>
+                    <p>Pemasangan panel listrik dengan MCB lengkap, sistem monitoring voltmeter dan ampere meter untuk kontrol daya yang akurat dan aman</p>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <img src="project2.jpg" alt="Instalasi Conduit & Kabel">
+                <div class="portfolio-overlay">
+                    <h3>Instalasi Conduit System</h3>
+                    <p>Pemasangan sistem conduit dan ducting untuk infrastruktur kabel yang rapi, terorganisir dan sesuai standar keamanan</p>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <img src="project3.jpg" alt="Network Cabling & IT Infrastructure">
+                <div class="portfolio-overlay">
+                    <h3>Network Infrastructure</h3>
+                    <p>Instalasi structured cabling system untuk jaringan komputer, dengan cable management profesional dan terstandarisasi</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="why-choose">
+        <h2>Mengapa Memilih Kami?</h2>
+        <p class="section-subtitle">Komitmen kami untuk memberikan yang terbaik</p>
+        <div class="features-grid">
+            <div class="feature">
+                <div class="feature-icon">👨‍💼</div>
+                <h3>Profesional</h3>
+                <p>Tim teknisi bersertifikat dengan pengalaman puluhan tahun</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">⚡</div>
+                <h3>Responsif</h3>
+                <p>Layanan cepat tanggap untuk kebutuhan mendesak</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">💰</div>
+                <h3>Harga Bersaing</h3>
+                <p>Harga kompetitif dengan kualitas premium</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">🛡️</div>
+                <h3>Garansi Resmi</h3>
+                <p>Garansi lengkap untuk setiap produk dan layanan</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Hubungi Kami</h2>
+        <p class="section-subtitle">Konsultasikan kebutuhan proyek Anda dengan tim kami</p>
+        <div class="contact-content">
+            <div class="contact-form">
+                <form>
+                    <div class="form-group">
+                        <label for="name">Nama Lengkap</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Nomor Telepon</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Pesan</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <button type="submit" class="cta-button">Kirim Pesan</button>
+                </form>
+            </div>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-item-icon">📍</div>
+                    <div class="contact-item-text">
+                        <h3>Alamat</h3>
+                        <p>Jl. Kudus No. 23, Antapani<br>Bandung, Jawa Barat 40291</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-item-icon">📞</div>
+                    <div class="contact-item-text">
+                        <h3>Telepon</h3>
+                        <p>+62 822 1199 5678</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-item-icon">✉️</div>
+                    <div class="contact-item-text">
+                        <h3>Email</h3>
+                        <p>info@adritamadata.co.id</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-item-icon">🕐</div>
+                    <div class="contact-item-text">
+                        <h3>Jam Operasional</h3>
+                        <p>Senin - Jumat: 08.00 - 17.00<br>Sabtu: 08.00 - 14.00</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 CV. Adritama Data Progresif. All Rights Reserved.</p>
+        <p>Your Trusted Partner in IT Solutions & Security Systems</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Form submission handler
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Terima kasih! Pesan Anda telah dikirim. Tim kami akan segera menghubungi Anda.');
+            this.reset();
+        });
+
+        // Add animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'fadeInUp 0.8s';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.service-card, .feature').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
